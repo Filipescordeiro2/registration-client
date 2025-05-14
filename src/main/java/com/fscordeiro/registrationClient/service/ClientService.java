@@ -2,11 +2,10 @@ package com.fscordeiro.registrationClient.service;
 
 import com.fscordeiro.registrationClient.dto.request.ClientRequest;
 import com.fscordeiro.registrationClient.dto.response.ClientResponse;
-import com.fscordeiro.registrationClient.enums.ClientType;
 import com.fscordeiro.registrationClient.exception.ClientException;
-import com.fscordeiro.registrationClient.factory.ClientFactory;
 import com.fscordeiro.registrationClient.repository.ClientRepository;
-import com.fscordeiro.registrationClient.strategy.ClientValidation;
+import com.fscordeiro.registrationClient.strategy.creator.ClientCreator;
+import com.fscordeiro.registrationClient.strategy.validation.ClientValidation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -20,17 +19,14 @@ public class ClientService {
 
     private final ClientRepository clientRepository;
     private final ClientValidation clientValidation;
-    private final ClientFactory clientFactory;
+    private final ClientCreator clientCreator;
 
     public ClientResponse registerClient(ClientRequest clientRequest) {
         log.info("Starting service [registerClient] for client type: {}", clientRequest.clientType());
         try {
             clientValidation.validate(clientRequest);
 
-            var client = clientRequest.clientType() == ClientType.INDIVIDUAL
-                    ? clientFactory.createIndividual(clientRequest)
-                    : clientFactory.createLegalEntity(clientRequest);
-
+            var client = clientCreator.create(clientRequest);
             clientRepository.save(client);
 
             log.info("Finished service [registerClient] successfully");

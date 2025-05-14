@@ -1,4 +1,4 @@
-package com.fscordeiro.registrationClient.strategy;
+package com.fscordeiro.registrationClient.strategy.validation;
 
 import com.fscordeiro.registrationClient.dto.request.ClientRequest;
 import lombok.RequiredArgsConstructor;

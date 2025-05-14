@@ -1,28 +1,27 @@
-package com.fscordeiro.registrationClient.strategy;
-
+package com.fscordeiro.registrationClient.strategy.validation;
 
 import com.fscordeiro.registrationClient.dto.request.ClientRequest;
 import com.fscordeiro.registrationClient.enums.ClientType;
 import com.fscordeiro.registrationClient.exception.ClientException;
-import com.fscordeiro.registrationClient.repository.LegalEntityRepository;
+import com.fscordeiro.registrationClient.repository.IndividualRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class LegalEntityCnpjValidationStrategy implements ClientValidationStrategy {
+public class IndividualCpfValidationStrategy implements ClientValidationStrategy{
 
-    private final LegalEntityRepository repository;
+    private final IndividualRepository repository;
 
     @Override
     public ClientType getSupportedType() {
-        return ClientType.LEGAL_ENTITY;
+        return ClientType.INDIVIDUAL;
     }
 
     @Override
     public void validate(ClientRequest request) {
-        if (repository.existsByCnpj(request.cnpj())) {
-            throw new ClientException("A legal entity client with this CNPJ already exists");
+        if (repository.existsByCpf(request.cpf())) {
+            throw new ClientException("An individual client with this CPF already exists");
         }
     }
 }

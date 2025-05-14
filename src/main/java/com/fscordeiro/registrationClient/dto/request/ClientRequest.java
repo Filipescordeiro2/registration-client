@@ -1,6 +1,7 @@
 package com.fscordeiro.registrationClient.dto.request;
 
 import com.fscordeiro.registrationClient.enums.ClientType;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
@@ -23,6 +24,7 @@ public record ClientRequest(
         String phone,
         @NotBlank(message = "Mobile number is required")
         String mobile,
+        @Email(message = "Invalid Email")
         @NotBlank(message = "Email is required")
         String email,
         @NotNull(message = "Client type is required")

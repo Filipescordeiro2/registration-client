@@ -1,6 +1,8 @@
 # Cadastro de Clientes - Pessoa Física e Jurídica
 
-Este projeto é uma API REST desenvolvida com Java 21 e Spring Boot que realiza o cadastro de clientes, podendo ser do tipo **Pessoa Física** `Individual` ou **Pessoa Jurídica** `LegalEntity`. O projeto foi estruturado utilizando **arquitetura em camadas** e aplicando os padrões de projeto **Factory** e **Strategy**.
+Este projeto é uma API REST desenvolvida com Java 21 e Spring Boot que realiza o cadastro de clientes, podendo ser do tipo **Pessoa Física** `Individual` ou **Pessoa Jurídica** `LegalEntity`. 
+
+O projeto foi estruturado utilizando **arquitetura em camadas** e aplicando o padrão de projeto **Strategy**.
 
 ##  Tecnologias Utilizadas
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
@@ -13,7 +15,6 @@ Este projeto é uma API REST desenvolvida com Java 21 e Spring Boot que realiza 
 ![Swagger/OpenAPI](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
 
-
 ## Arquitetura e Camadas
 
 O projeto segue uma arquitetura em camadas bem definida com os seguintes pacotes:
@@ -23,11 +24,11 @@ O projeto segue uma arquitetura em camadas bem definida com os seguintes pacotes
 - `dto`: objetos de transferência de dados (divididos em `request` e `response`)
 - `enums`: tipos enumerados usados no domínio (ex: tipo de cliente)
 - `exception`: exceções personalizadas e handlers globais
-- `factory`: implementação do padrão Factory para criação de objetos
+- `factory`: implementação anterior do padrão Factory (agora abstraído por Strategy)
 - `model`: entidades de domínio (JPA)
 - `repository`: interfaces de persistência (Spring Data JPA)
 - `service`: lógica de negócio e orquestração
-- `strategy`: implementação do padrão Strategy para validações dinâmicas
+- `strategy`: implementação do padrão Strategy para validações e criação de clientes
 
 ##  Endpoint Principal
 
@@ -93,23 +94,22 @@ As validações seguem as seguintes regras, implementadas através do padrão **
 
 - **Validação de CPF e CNPJ duplicado**
 - **Validação de e-mail duplicado**
-- **Validações de formato de CPF/CNPJ (anotações @CPF e @CNPJ do Hibernate Validator)**
+- **Validações de formato de CPF/CNPJ (anotações @CPF e @CNPJ e @Email do Hibernate Validator)**
 - Campos obrigatórios (nome, telefone, celular, email, tipoCliente e endereço)
 
-## Factory
+## Strategy
 
-A lógica de criação de cada tipo de cliente é abstraída por uma classe `ClienteFactory`, responsável por instanciar corretamente os objetos de domínio com base no tipo informado.
+O padrão Strategy é utilizado em dois contextos:
 
-##  Strategy
+- **Validação:** Cada regra de validação (ex: CPF / CNPJ e Email duplicados, Campos não preenchidos) é implementada como uma classe que implementa a interface `ClientValidator`, permitindo execução dinâmica das regras.
+- **Criação de cliente:** Cada tipo de cliente (`INDIVIDUAL`, `LEGAL_ENTITY`) possui uma estratégia de criação que implementa a interface `ClientCreatorStrategy`, promovendo uma construção desacoplada e orientada ao tipo.
 
-Cada regra de validação (como verificar duplicidade de CPF/CNPJ ou e-mail) é implementada como uma classe que implementa a interface `ClientValidator`. As validações são injetadas em uma lista e executadas dinamicamente com base na requisição.
-
-##  Banco de Dados
+## Banco de Dados
 
 - Utiliza o banco **H2 em memória** para testes locais.
 - A estrutura é criada automaticamente com base nas entidades JPA.
 
-##  Como executar o projeto
+## Como executar o projeto
 
 1. Clone o repositório:
 
@@ -119,15 +119,16 @@ Cada regra de validação (como verificar duplicidade de CPF/CNPJ ou e-mail) é 
 
 A API estará disponível em: `http://localhost:8080`
 
-##  Swagger
+## Swagger
 
 A documentação interativa da API está disponível em:
 
 ```
 http://localhost:8080/swagger-ui.html
 ```
+
 ## Logs
-Os logs do projeto é salvo nesse diretorio:
+Os logs do projeto são salvos neste diretório:
 ```text
 registrationClient\logs
 ```
