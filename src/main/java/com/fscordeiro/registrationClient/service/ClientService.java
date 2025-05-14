@@ -25,9 +25,7 @@ public class ClientService {
         log.info("Starting service [registerClient] for client type: {}", clientRequest.clientType());
         try {
             clientValidation.validate(clientRequest);
-
-            var client = clientCreator.create(clientRequest);
-            clientRepository.save(client);
+            clientRepository.save(clientCreator.create(clientRequest));
 
             log.info("Finished service [registerClient] successfully");
             return ClientResponse.builder()
