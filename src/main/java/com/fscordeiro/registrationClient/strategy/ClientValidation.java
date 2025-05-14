@@ -8,22 +8,22 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-@Slf4j
 @RequiredArgsConstructor
+@Slf4j
 public class ClientValidation {
 
-    private final List<ClientValidator> validators;
+    private final List<ClientValidationStrategy> strategies;
 
     public void validate(ClientRequest request) {
         log.info("Starting client validation for: {}", request);
 
-        validators.forEach(validator -> {
-            log.debug("Running validator: {}", validator.getClass().getSimpleName());
-            validator.validate(request);
-        });
+        strategies.stream()
+                .filter(strategy -> strategy.getSupportedType() == request.clientType())
+                .forEach(strategy -> {
+                    log.debug("Executing strategy: {}", strategy.getClass().getSimpleName());
+                    strategy.validate(request);
+                });
 
         log.info("Client validation completed for: {}", request);
     }
 }
-
-
