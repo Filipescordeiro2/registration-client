@@ -1,6 +1,6 @@
 # Cadastro de Clientes - Pessoa Física e Jurídica
 
-Este projeto é uma API REST desenvolvida com Java 21 e Spring Boot que realiza o cadastro de clientes, podendo ser do tipo **Pessoa Física** ou **Pessoa Jurídica**. O projeto foi estruturado utilizando **arquitetura em camadas** e aplicando os padrões de projeto **Factory** e **Strategy**.
+Este projeto é uma API REST desenvolvida com Java 21 e Spring Boot que realiza o cadastro de clientes, podendo ser do tipo **Pessoa Física** `Individual` ou **Pessoa Jurídica** `LegalEntity`. O projeto foi estruturado utilizando **arquitetura em camadas** e aplicando os padrões de projeto **Factory** e **Strategy**.
 
 ##  Tecnologias Utilizadas
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
