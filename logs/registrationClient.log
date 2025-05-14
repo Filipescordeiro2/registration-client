@@ -177,3 +177,54 @@
 2025-05-14T08:17:12.171-03:00  INFO 2388 --- [registrationClient] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-05-14T08:17:12.174-03:00  INFO 2388 --- [registrationClient] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-05-14T08:17:12.177-03:00  INFO 2388 --- [registrationClient] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-14T08:21:05.073-03:00  INFO 20544 --- [registrationClient] [main] c.f.r.RegistrationClientApplication      : Starting RegistrationClientApplication using Java 22.0.2 with PID 20544 (C:\Users\USER\Desktop\projetos\registrationClient\target\classes started by USER in C:\Users\USER\Desktop\projetos\registrationClient)
+2025-05-14T08:21:05.076-03:00  INFO 20544 --- [registrationClient] [main] c.f.r.RegistrationClientApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-05-14T08:21:05.948-03:00  INFO 20544 --- [registrationClient] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-14T08:21:06.023-03:00  INFO 20544 --- [registrationClient] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 3 JPA repository interfaces.
+2025-05-14T08:21:06.578-03:00  INFO 20544 --- [registrationClient] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-14T08:21:06.595-03:00  INFO 20544 --- [registrationClient] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-14T08:21:06.595-03:00  INFO 20544 --- [registrationClient] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-14T08:21:06.655-03:00  INFO 20544 --- [registrationClient] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-14T08:21:06.655-03:00  INFO 20544 --- [registrationClient] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1526 ms
+2025-05-14T08:21:06.834-03:00  INFO 20544 --- [registrationClient] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-14T08:21:06.894-03:00  INFO 20544 --- [registrationClient] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-14T08:21:06.932-03:00  INFO 20544 --- [registrationClient] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-14T08:21:07.206-03:00  INFO 20544 --- [registrationClient] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-14T08:21:07.240-03:00  INFO 20544 --- [registrationClient] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-14T08:21:07.434-03:00  INFO 20544 --- [registrationClient] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:registration user=SA
+2025-05-14T08:21:07.436-03:00  INFO 20544 --- [registrationClient] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-14T08:21:07.461-03:00  WARN 20544 --- [registrationClient] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-14T08:21:07.483-03:00  INFO 20544 --- [registrationClient] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-14T08:21:08.571-03:00  INFO 20544 --- [registrationClient] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-14T08:21:08.659-03:00  INFO 20544 --- [registrationClient] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-14T08:21:09.157-03:00  WARN 20544 --- [registrationClient] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-14T08:21:09.587-03:00  INFO 20544 --- [registrationClient] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:registration'
+2025-05-14T08:21:09.671-03:00  INFO 20544 --- [registrationClient] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-14T08:21:09.680-03:00  INFO 20544 --- [registrationClient] [main] c.f.r.RegistrationClientApplication      : Started RegistrationClientApplication in 5.178 seconds (process running for 5.853)
+2025-05-14T08:21:18.722-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-14T08:21:18.723-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-14T08:21:18.724-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-14T08:21:18.974-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-2] c.f.r.controller.ClientController        : Starting endpoint [createClient] with request: ClientRequest[cnpj=null, cpf=null, responsibleCpf=null, name=João da Silva, phone=11999999999, mobile=11988888888, email=joao.silva@example.com, clientType=INDIVIDUAL, address=[AddressRequest[postalCode=01234567, street=Rua Exemplo, number=123, complement=Apartamento 45, neighborhood=Centro, city=São Paulo, state=SP]]]
+2025-05-14T08:21:18.980-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-2] c.f.r.service.ClientService              : Starting service [registerClient] for client type: INDIVIDUAL
+2025-05-14T08:21:18.981-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-2] c.f.r.s.validation.ClientValidation      : Starting client validation for: ClientRequest[cnpj=null, cpf=null, responsibleCpf=null, name=João da Silva, phone=11999999999, mobile=11988888888, email=joao.silva@example.com, clientType=INDIVIDUAL, address=[AddressRequest[postalCode=01234567, street=Rua Exemplo, number=123, complement=Apartamento 45, neighborhood=Centro, city=São Paulo, state=SP]]]
+2025-05-14T08:21:19.110-03:00  WARN 20544 --- [registrationClient] [http-nio-8080-exec-2] c.f.r.service.ClientService              : Known client exception occurred: CPF cannot be null
+2025-05-14T08:21:19.112-03:00 ERROR 20544 --- [registrationClient] [http-nio-8080-exec-2] c.f.r.exception.GlobalHandleExecption    : ClienteExecption caught: CPF cannot be null
+2025-05-14T08:21:21.672-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-4] c.f.r.controller.ClientController        : Starting endpoint [createClient] with request: ClientRequest[cnpj=null, cpf=51033108804, responsibleCpf=null, name=João da Silva, phone=11999999999, mobile=11988888888, email=joao.silva@example.com, clientType=INDIVIDUAL, address=[AddressRequest[postalCode=01234567, street=Rua Exemplo, number=123, complement=Apartamento 45, neighborhood=Centro, city=São Paulo, state=SP]]]
+2025-05-14T08:21:21.673-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-4] c.f.r.service.ClientService              : Starting service [registerClient] for client type: INDIVIDUAL
+2025-05-14T08:21:21.673-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-4] c.f.r.s.validation.ClientValidation      : Starting client validation for: ClientRequest[cnpj=null, cpf=51033108804, responsibleCpf=null, name=João da Silva, phone=11999999999, mobile=11988888888, email=joao.silva@example.com, clientType=INDIVIDUAL, address=[AddressRequest[postalCode=01234567, street=Rua Exemplo, number=123, complement=Apartamento 45, neighborhood=Centro, city=São Paulo, state=SP]]]
+2025-05-14T08:21:21.676-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-4] c.f.r.s.validation.ClientValidation      : Client validation completed for: ClientRequest[cnpj=null, cpf=51033108804, responsibleCpf=null, name=João da Silva, phone=11999999999, mobile=11988888888, email=joao.silva@example.com, clientType=INDIVIDUAL, address=[AddressRequest[postalCode=01234567, street=Rua Exemplo, number=123, complement=Apartamento 45, neighborhood=Centro, city=São Paulo, state=SP]]]
+2025-05-14T08:21:21.677-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-4] c.f.r.s.creator.IndividualClientCreator  : Creating Individual for CPF: 51033108804
+2025-05-14T08:21:21.765-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-4] c.f.r.service.ClientService              : Finished service [registerClient] successfully
+2025-05-14T08:21:21.766-03:00  INFO 20544 --- [registrationClient] [http-nio-8080-exec-4] c.f.r.controller.ClientController        : Finished endpoint [createClient] with response: ClientResponse[message=Client successfully registered!, createdAt=2025-05-14T08:21:21.766306600]
+2025-05-14T08:26:00.761-03:00  INFO 20544 --- [registrationClient] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-14T08:26:00.764-03:00  INFO 20544 --- [registrationClient] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-14T08:26:00.770-03:00  INFO 20544 --- [registrationClient] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-14T08:26:00.772-03:00  INFO 20544 --- [registrationClient] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-14T08:26:00.774-03:00  INFO 20544 --- [registrationClient] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

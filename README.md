@@ -24,7 +24,6 @@ O projeto segue uma arquitetura em camadas bem definida com os seguintes pacotes
 - `dto`: objetos de transferência de dados (divididos em `request` e `response`)
 - `enums`: tipos enumerados usados no domínio (ex: tipo de cliente)
 - `exception`: exceções personalizadas e handlers globais
-- `factory`: implementação anterior do padrão Factory (agora abstraído por Strategy)
 - `model`: entidades de domínio (JPA)
 - `repository`: interfaces de persistência (Spring Data JPA)
 - `service`: lógica de negócio e orquestração
@@ -37,7 +36,7 @@ O projeto segue uma arquitetura em camadas bem definida com os seguintes pacotes
   http://localhost:8080/client
 ```
 
-Endpoint único para cadastro de ambos os tipos de cliente (Pessoa Física e Pessoa Jurídica). O tipo de cliente é definido através do campo `tipoCliente`.
+Endpoint único para cadastro de ambos os tipos de cliente (Pessoa Física e Pessoa Jurídica). O tipo de cliente é definido através do campo Tipo Cliente `clientType`.
 
 #### Exemplo de Request - Pessoa Física
 
