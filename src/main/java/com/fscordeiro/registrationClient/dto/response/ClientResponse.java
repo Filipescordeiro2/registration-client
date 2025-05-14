@@ -5,6 +5,7 @@ import lombok.Builder;
 import java.time.LocalDateTime;
 
 @Builder
-public record ClientResponse(String message, LocalDateTime createdAt) {
+public record ClientResponse(String message,
+                             LocalDateTime createdAt) {
 
 }

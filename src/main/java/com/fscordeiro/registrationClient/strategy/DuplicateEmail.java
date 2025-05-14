@@ -30,7 +30,7 @@ public class DuplicateEmail implements ClientValidator {
         }
         if (request.clientType() == ClientType.LEGAL_ENTITY) {
             log.debug("Checking if email exists: {}", request.email());
-            if (legalEntityRepository.existsByCnpj(request.cnpj())) {
+            if (legalEntityRepository.existsByEmail(request.email())) {
                 log.warn("Duplicate email found for Legal Entity: {}", request.email());
                 throw new ClientException("A legal entity client with this email already exists");
             }
