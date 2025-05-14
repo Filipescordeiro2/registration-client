@@ -2,7 +2,7 @@
 
 Este projeto é uma API REST desenvolvida com Java 21 e Spring Boot que realiza o cadastro de clientes, podendo ser do tipo **Pessoa Física** ou **Pessoa Jurídica**. O projeto foi estruturado utilizando **arquitetura em camadas** e aplicando os padrões de projeto **Factory** e **Strategy**.
 
-## 🚀 Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 ![Spring Web](https://img.shields.io/badge/Spring%20Web-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
@@ -14,7 +14,7 @@ Este projeto é uma API REST desenvolvida com Java 21 e Spring Boot que realiza 
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
 
 
-## 📐 Arquitetura e Camadas
+## Arquitetura e Camadas
 
 O projeto segue uma arquitetura em camadas bem definida com os seguintes pacotes:
 
@@ -29,7 +29,7 @@ O projeto segue uma arquitetura em camadas bem definida com os seguintes pacotes
 - `service`: lógica de negócio e orquestração
 - `strategy`: implementação do padrão Strategy para validações dinâmicas
 
-## 📌 Endpoint Principal
+##  Endpoint Principal
 
 ### `POST /client`
 ```text
@@ -87,7 +87,7 @@ Endpoint único para cadastro de ambos os tipos de cliente (Pessoa Física e Pes
 }
 ```
 
-## ✅ Validações
+##  Validações
 
 As validações seguem as seguintes regras, implementadas através do padrão **Strategy**:
 
@@ -96,45 +96,46 @@ As validações seguem as seguintes regras, implementadas através do padrão **
 - **Validações de formato de CPF/CNPJ (anotações @CPF e @CNPJ do Hibernate Validator)**
 - Campos obrigatórios (nome, telefone, celular, email, tipoCliente e endereço)
 
-## 🏭 Factory
+## Factory
 
 A lógica de criação de cada tipo de cliente é abstraída por uma classe `ClienteFactory`, responsável por instanciar corretamente os objetos de domínio com base no tipo informado.
 
-## 🧠 Strategy
+##  Strategy
 
 Cada regra de validação (como verificar duplicidade de CPF/CNPJ ou e-mail) é implementada como uma classe que implementa a interface `ClientValidator`. As validações são injetadas em uma lista e executadas dinamicamente com base na requisição.
 
-## 🧪 Banco de Dados
+##  Banco de Dados
 
 - Utiliza o banco **H2 em memória** para testes locais.
 - A estrutura é criada automaticamente com base nas entidades JPA.
 
-## 🛠 Como executar o projeto
+##  Como executar o projeto
 
 1. Clone o repositório:
 
 ```bash
-  git clone https://github.com/seu-usuario/nome-do-repositorio.git
-```
-
-2. Navegue até o diretório:
-
-```bash
-  cd nome-do-repositorio
-```
-
-3. Compile e execute a aplicação:
-
-```bash
-  ./mvnw spring-boot:run
+  git clone https://github.com/Filipescordeiro2/registration-client.git
 ```
 
 A API estará disponível em: `http://localhost:8080`
 
-## 📚 Swagger
+##  Swagger
 
 A documentação interativa da API está disponível em:
 
 ```
 http://localhost:8080/swagger-ui.html
 ```
+## Logs
+Os logs do projeto é salvo nesse diretorio:
+```text
+registrationClient\logs
+```
+
+## Criado por
+
+**Filipe Santana Cordeiro**  
+**Backend Developer**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/filipesantanacordeiro/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Filipescordeiro2)
